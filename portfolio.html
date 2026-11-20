@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Glaiza Jane Lopez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="portfolio-page">
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Glaiza<span>.</span></h2>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div class="portfolio-intro">
+            <p class="section-label">MY COLLECTION</p>
+
+            <h2>Experiences That <span>Define Me</span></h2>
+
+            <p>
+                From real-world experiences to academic milestones
+                and programming achievements, each one has helped
+                me learn, improve, and become a better version of myself.
+            </p>
+        </div>
+
+        <!-- PORTFOLIO CARDS -->
+        <div class="portfolio-container">
+
+            <!-- WORK IMMERSION -->
+            <article class="project-card project-card-image">
+
+                <div class="project-card-top">
+                    <span class="project-number">01</span>
+                    <span class="project-label">EXPERIENCE</span>
+                </div>
+
+                <div class="project-image">
+                    <img src="immer.jpg"
+                         alt="Work Immersion Experience">
+                </div>
+
+                <h2>Work Immersion</h2>
+
+                <p>
+                    A glimpse of my experience in a real working
+                    environment, where I gained practical knowledge,
+                    learned new responsibilities, and developed
+                    important workplace skills.
+                </p>
+
+                <button class="view-project"
+                        onclick="showDetails('immersion')">
+                    Explore Experience <span>↗</span>
+                </button>
+
+            </article>
+
+            <!-- ACADEMIC ACHIEVEMENT -->
+            <article class="project-card project-card-image">
+
+                <div class="project-card-top">
+                    <span class="project-number">02</span>
+                    <span class="project-label">ACHIEVEMENT</span>
+                </div>
+
+                <div class="project-image">
+                    <img src="grad.jpg"
+                         alt="Senior High School Graduation">
+                </div>
+
+                <h2>Academic Achievement</h2>
+
+                <p>
+                    A meaningful milestone in my academic journey.
+                    Graduating from Senior High School with High
+                    Honors is a reflection of my dedication and hard work.
+                </p>
+
+                <button class="view-project"
+                        onclick="showDetails('achievement')">
+                    View Achievement <span>↗</span>
+                </button>
+
+            </article>
+
+            <!-- CODECHUM CERTIFICATES -->
+            <article class="project-card project-card-image">
+
+                <div class="project-card-top">
+                    <span class="project-number">03</span>
+                    <span class="project-label">CERTIFICATION</span>
+                </div>
+
+                <div class="project-image">
+                    <img src="cert.png.png"
+                         alt="CodeChum Programming Certificate">
+                </div>
+
+                <h2>CodeChum Certificates</h2>
+
+                <p>
+                    Certificates earned through completing
+                    programming activities in C and C#,
+                    showcasing my dedication to learning
+                    and developing technical skills.
+                </p>
+
+                <button class="view-project"
+                        onclick="showDetails('codechum')">
+                    View Certificates <span>↗</span>
+                </button>
+
+            </article>
+
+        </div>
+
+        <!-- CLOSING QUOTE -->
+        <section class="portfolio-quote">
+
+            <div class="quote-symbol">“</div>
+
+            <h2>
+                Every little effort becomes
+                <span>part of a bigger story.</span>
+            </h2>
+
+            <p>
+                I am still learning, exploring, and discovering
+                what I can achieve. These experiences are only
+                a part of the journey ahead.
+            </p>
+
+            <span class="quote-signature">
+                — Glaiza Jane Lopez ♡
+            </span>
+
+        </section>
+
+    </main>
+
+    <!-- INTERACTIVE POPUP -->
+    <div class="portfolio-popup" id="portfolioPopup">
+
+        <div class="portfolio-popup-content">
+
+            <button class="popup-close"
+                    onclick="closeDetails()"
+                    aria-label="Close popup">
+                &times;
+            </button>
+
+            <div class="popup-icon" id="detailIcon">✿</div>
+
+            <span class="popup-category" id="detailCategory">
+                MY EXPERIENCE
+            </span>
+
+            <h2 id="detailTitle">Category Title</h2>
+
+            <p id="detailDescription">
+                Description goes here.
+            </p>
+
+            <!-- CERTIFICATE IMAGES -->
+            <div class="popup-certificate-images"
+                 id="certificateImages"
+                 style="display: none;">
+
+                <div>
+                    <img src="cert.png.png"
+                         alt="C Programming 1 Certificate">
+                    <p>C Programming 1</p>
+                </div>
+
+                <div>
+                    <img src="cert2.png"
+                         alt="C# Programming 1 Certificate">
+                    <p>C# Programming 1</p>
+                </div>
+
+            </div>
+
+            <div class="popup-line"></div>
+
+            <h3>What It Taught Me</h3>
+
+            <p id="detailLearning">
+                Learning experience goes here.
+            </p>
+
+            <button class="btn" onclick="closeDetails()">
+                Close ♡
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Glaiza Jane Lopez | All Rights Reserved</p>
+        <p>Made with ♡ and creativity.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const details = {
+
+            immersion: {
+                icon: "💼",
+                category: "WORK EXPERIENCE",
+                title: "My Work Immersion Journey",
+
+                description:
+                    "My work immersion gave me the opportunity to experience an actual working environment. During my immersion, I assisted with assigned tasks, helped organize documents, prepared service-related materials, and observed how employees handled their daily responsibilities.",
+
+                learning:
+                    "This experience taught me the importance of responsibility, teamwork, time management, and professionalism. It also helped me become more confident in communicating with others and adapting to a workplace."
+            },
+
+            achievement: {
+                icon: "🎓",
+                category: "ACADEMIC ACHIEVEMENT",
+                title: "Senior High School Graduate",
+
+                description:
+                    "I successfully completed my Senior High School education under the Accountancy, Business, and Management (ABM) strand. I graduated with High Honors and ranked 5th among 337 Grade 12 students.",
+
+                learning:
+                    "This achievement represents my dedication, perseverance, and commitment to education. It reminds me that every effort, no matter how small, contributes to reaching my goals."
+            },
+
+            codechum: {
+                icon: "💻",
+                category: "PROGRAMMING CERTIFICATES",
+                title: "My CodeChum Certificates",
+
+                description:
+                    "I successfully completed C Programming 1 and C# Programming 1 through CodeChum. These certificates represent my effort and dedication to learning programming and improving my technical skills.",
+
+                learning:
+                    "Through these programming activities, I improved my understanding of coding concepts, logical thinking, and problem-solving. They also encouraged me to continue exploring the world of technology.",
+
+                certificates: true
+            }
+
+        };
+
+        function showDetails(category) {
+
+            const item = details[category];
+
+            if (!item) return;
+
+            document.getElementById("detailIcon").textContent = item.icon;
+            document.getElementById("detailCategory").textContent = item.category;
+            document.getElementById("detailTitle").textContent = item.title;
+            document.getElementById("detailDescription").textContent = item.description;
+            document.getElementById("detailLearning").textContent = item.learning;
+
+            const certificateImages =
+                document.getElementById("certificateImages");
+
+            certificateImages.style.display =
+                item.certificates ? "grid" : "none";
+
+            document.getElementById("portfolioPopup").classList.add("active");
+
+        }
+
+        function closeDetails() {
+            document.getElementById("portfolioPopup").classList.remove("active");
+        }
+
+        // Close popup when clicking outside
+        document.getElementById("portfolioPopup").addEventListener("click", function(event) {
+            if (event.target === this) {
+                closeDetails();
+            }
+        });
+
+        // Close popup using Escape
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeDetails();
+            }
+        });
+
+    </script>
+<!-- CREATIVE PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+        <div class="loader-star">✦</div>
+
+        <h1>Glaiza<span>.</span></h1>
+
+        <p>A LITTLE WORLD OF DREAMS</p>
+
+        <div class="loader-line">
+            <div class="loader-progress"></div>
+        </div>
+
+        <small>PLEASE WAIT A MOMENT...</small>
+    </div>
+</div>
+<script>
+const pageLoader = document.getElementById("pageLoader");
+
+document.querySelectorAll("nav a[href]").forEach(link => {
+    link.addEventListener("click", function(event) {
+        const destination = this.href;
+
+        if (
+            this.target === "_blank" ||
+            this.hasAttribute("download") ||
+            !destination ||
+            destination.startsWith("javascript:")
+        ) {
+            return;
+        }
+
+        const url = new URL(destination);
+
+        if (url.origin !== location.origin ||
+            url.pathname === location.pathname &&
+            url.hash) {
+            return;
+        }
+
+        event.preventDefault();
+
+        pageLoader.classList.add("active");
+
+        setTimeout(() => {
+            window.location.href = destination;
+        }, 900);
+    });
+});
+</script>
+
+<script>
+// SCROLL REVEAL ANIMATION
+const revealElements = document.querySelectorAll(
+    "main section, .project-card, .about-timeline-item, .certificate-card, form"
+);
+
+revealElements.forEach(element => {
+    element.classList.add("scroll-reveal");
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+</script>
+
+</body>
+</html>
